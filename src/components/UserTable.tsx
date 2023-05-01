@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useCallback, useMemo, useRef, useState } from 'react'
 import useStores from 'hooks/useStores'
 import { observer } from 'mobx-react-lite'
 import UserEditModal from './UserEditModal'
 import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
-import { type Location, type User } from 'types/types'
+import { type User } from 'types/types'
 import { confirmDialog } from 'primereact/confirmdialog'
 import { ContextMenu } from 'primereact/contextmenu'
 import MenuBar from './Menubar'
@@ -19,7 +18,7 @@ const UserTable: React.FC = () => {
   const [edittingUserId, setEdittingUserId] = useState<string | null>(null)
   const [selectedUser, setSelectedUser] = useState<User | null>(null)
   const [globalFilter, setGlobalFilter] = useState('')
-  console.log('selectedUser', selectedUser)
+
   const onGlobalFilterChange = (e: any): void => {
     setGlobalFilter(e.target.value)
   }

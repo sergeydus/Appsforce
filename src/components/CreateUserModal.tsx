@@ -71,7 +71,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
       onEditDialogClose()
     }
   })
-  console.log('formik', formik)
+
   useEffect(() => {
     if (!isOpen) {
       formik.resetForm()
