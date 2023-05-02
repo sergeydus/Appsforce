@@ -21,7 +21,6 @@ const Home: React.FC = () => {
   const isLoading = isFetchingUsers
 
   useEffect(() => {
-    console.log('asdadssda')
     userStore.getUsers().finally(() => {
       setIsFetchingUsers(false)
     })
