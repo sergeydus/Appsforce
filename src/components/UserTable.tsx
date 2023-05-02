@@ -8,6 +8,13 @@ import { type User } from 'types/types'
 import { confirmDialog } from 'primereact/confirmdialog'
 import { ContextMenu } from 'primereact/contextmenu'
 import MenuBar from './Menubar'
+import styled from 'styled-components'
+
+const StyledTable = styled(DataTable)`
+  @media screen and (max-width: 960px) {
+    width: 100%
+  }
+`
 
 const imageTemplate = (user: User): JSX.Element => {
   return <img src={user.picture} alt={'picture'} className="w-4rem shadow-2 border-round" />
@@ -66,7 +73,7 @@ const UserTable: React.FC = () => {
         userStore.updateUser(res)
       }} />
       <ContextMenu model={menuModel} ref={contextMenu} onHide={() => { setSelectedUser(null) }} />
-      <DataTable
+      <StyledTable
         responsiveLayout='stack'
         value={userStore.users}
         onContextMenu={(e) => contextMenu?.current?.show(e.originalEvent)}
@@ -82,7 +89,7 @@ const UserTable: React.FC = () => {
         <Column field="location.country" header="Country"></Column>
         <Column field="location.city" header="City"></Column>
         <Column field="location.street" header="Street"></Column>
-      </DataTable>
+      </StyledTable>
     </>
   )
 }
