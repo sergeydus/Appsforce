@@ -9,6 +9,13 @@ import useStores from 'hooks/useStores'
 import styled from 'styled-components'
 import Space from './Space'
 
+const StyledDialog = styled(Dialog)`
+  width: 50vw;
+  @media screen and (max-width: 960px) {
+    width: 100vw
+  }
+`
+
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -68,7 +75,7 @@ const UserEditModal: React.FC<UserEditModalProps> = ({ userId, onEditDialogClose
   })
 
   return (
-    <Dialog header={title} visible={isOpen} style={{ width: '50vw' }} onHide={onEditDialogClose}>
+    <StyledDialog header={title} visible={isOpen} onHide={onEditDialogClose}>
       <StyledForm onSubmit={formik.handleSubmit} className='flex flex-column'>
         <Input
           id="firstName"
@@ -126,7 +133,7 @@ const UserEditModal: React.FC<UserEditModalProps> = ({ userId, onEditDialogClose
           <Button type='submit' label="Save" icon="pi pi-check" disabled={!formik.isValid} autoFocus />
         </FormFooter>
       </StyledForm>
-    </Dialog>
+    </StyledDialog>
   )
 }
 export default observer(UserEditModal)
