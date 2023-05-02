@@ -111,6 +111,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           value={formik.values.email}
           error={formik.errors.email}
         />
+        <label htmlFor='picture'>Picture</label>
         <FileUpload
           id="picture"
           name="picture"
@@ -124,7 +125,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           id="city"
           name="city"
           type="city"
-          label='city'
+          label='City'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.city}
@@ -134,7 +135,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           id="country"
           name="country"
           type="country"
-          label='country'
+          label='Country'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.country}
