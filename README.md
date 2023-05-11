@@ -1,6 +1,57 @@
-
+Homework assignment from the appsforce interview.
 https://sergeydus.github.io/appsforce/
 
+what i've learned from this experience: i should have taken accessibility into account, since the interviewer didnt manage to edit/delete any list item  
+
+i was given the following requirements:
+
+The Users Library
+
+The task is to write a simple user library app in React.
+Data is provided via an Ajax Request - https://randomuser.me/api/?results=10.
+Each Person will have:
+1. Name - title, first name, last name.
+2. Email.
+3. User image - medium.
+4. Location - country, city, street.
+5. UUID/ID.
+* All other fields are irrelevant.
+The page will show all the users resolved from the requests with a proper design
+– nice design == high score!.
+1. The design should be responsive.
+2. Use styled components/scss modules, also you can use ui framework
+such as material-ui/bootstrap etc.
+3. Each user can edit (locally).
+4. Edit button should open a modal with save and cancel button.
+5. The fields that can edit are - Name, Email and Location.
+6. Proper validation should be included:
+- All Fields cannot be empty.
+- Name - min of 3 characters.
+- Email - should be a valid email address.
+- Each user should have a unique email address
+7. Proper error message should be shown when trying to save a user - don’t
+use HTML5 validation.
+8. Implement “Add user” button. Should open a new user form.
+9. Each user can be deleted (show confirm message before deleting).
+Bonus Task:
+1. Use Redux (high bonus).
+2. Use Typescript (high bonus).
+3. Add a search filter by email, name, id and location (client side search).
+
+Important notes:
+1. Make a clean(!) code.
+2. Separate your code info files.
+3. The app should look nice.
+4. Use advanced features of react.
+5. Do not repeat yourself.
+
+How to submit the code:
+1. Upload the code to your Github or other VCS.
+2. Upload the app to server Heroku/Firebase/Aws.
+3. Send us the repository link + link to a working task.
+
+Good Luck!
+Appsforce Team
 
 # Getting Started with Create React App
 
