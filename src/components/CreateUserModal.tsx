@@ -58,8 +58,8 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
       email: Yup.string().email('Invalid email address').required('Required'),
       country: Yup.string().required('Required'),
       city: Yup.string().required('Required'),
-      street: Yup.string().required('Required'),
-      picture: Yup.string().required('Required')
+      street: Yup.string().required('Required')
+      // picture: Yup.string().required('Required')
     }),
     onSubmit: values => {
       const { city, country, email, firstName, lastName, picture, street } = values
@@ -97,6 +97,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           onBlur={formik.handleBlur}
           value={formik.values.firstName}
           error={formik.errors.firstName}
+          touched={formik.touched.firstName}
         />
         <Input
           id="lastName"
@@ -107,6 +108,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           onBlur={formik.handleBlur}
           value={formik.values.lastName}
           error={formik.errors.lastName}
+          touched={formik.touched.lastName}
         />
         <Input
           id="email"
@@ -117,6 +119,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           onBlur={formik.handleBlur}
           value={formik.values.email}
           error={formik.errors.email}
+          touched={formik.touched.email}
         />
         <label htmlFor='picture'>Picture</label>
         <FileUpload
@@ -137,6 +140,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           onBlur={formik.handleBlur}
           value={formik.values.city}
           error={formik.errors.city}
+          touched={formik.touched.city}
         />
         <Input
           id="country"
@@ -147,6 +151,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           onBlur={formik.handleBlur}
           value={formik.values.country}
           error={formik.errors.country}
+          touched={formik.touched.country}
         />
         <Input
           id="street"
@@ -157,6 +162,7 @@ const CreateUserModal: React.FC<UserEditModalProps> = ({ onEditDialogClose, titl
           onBlur={formik.handleBlur}
           value={formik.values.street}
           error={formik.errors.street}
+          touched={formik.touched.street}
         />
         <Space height={8} />
         <FormFooter>

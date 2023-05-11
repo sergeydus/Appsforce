@@ -18,10 +18,11 @@ const InputLabel = styled.label`
   margin-bottom: 4px;
 `
 
-type InputProps = InputTextProps & { error?: string, label?: string }
+type InputProps = InputTextProps & { error?: string, label?: string, touched?: boolean }
 const Input: React.FC<InputProps> = (props) => {
-  const { error, label, ...rest } = props
-  const hasError = error != null
+  const { error, label, touched, ...rest } = props
+  const hasError = error != null && touched != null
+
   return (
     <StyledInput>
       {label != null && <InputLabel htmlFor={rest.id ?? rest.name}>{label}</InputLabel>}

@@ -3,7 +3,7 @@ import axios from 'axios'
 import { makeAutoObservable } from 'mobx'
 import { type Result, type User } from 'types/types'
 import type RootStore from './rootStore'
-
+type id = string
 export default class UserStore {
   constructor (rootStore: RootStore) {
     makeAutoObservable(this)
@@ -12,13 +12,13 @@ export default class UserStore {
   }
 
   private readonly rootStore: RootStore
-  private _users: Map<string, User>
+  private _users: Map<id, User>
   public get users (): User[] {
     return Array.from(this._users.values())
   }
 
   public set users (value: User[]) {
-    const userMap = new Map<string, User>()
+    const userMap = new Map<id, User>()
     value.forEach(usr => {
       userMap.set(usr.id, usr)
     })
